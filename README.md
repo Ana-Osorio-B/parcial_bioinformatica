@@ -10,10 +10,10 @@ Luego los contactene con el comando ```cat sequence* > sequence_misticetos.fasta
 ### 2.
 Para cambiar el nombre use el comando sed de la siguiente forma: ```sed -i -E 's/^(>\w+.\w+)\s(\w+)\s(\w+)\s.*/\1_\2_\3/g' sequence_misticetos.fasta```, indicando que editara las lineas que inciaran con > y agrupando canda palabra en un parentesis, para luego pedir que el remplazo fueran el parentesis 1 que contenia el ID, el parentesis 2 que contenia el genero y el parentesis 3 que contenia el epiteto específico, todo separado por _. Con el parametro -i consegui que guardara el reemplazo en el mismo archivo.
 
-## 4.
+### 4.
 En el cluster: ```blastn -query query.fasta -task megablast -db trans_misticetos -outfmt 7 -word_size 7 -out blast_misticetos -num_threads 1```
 
-## 5.
+### 5.
 Al comparar la secuencia contenida en query.fasta con la base de datos creada con los fasta de misticetos se obtuvo una mayor similitud con la muestra AB201258.1_Balaenoptera_edeni, deduciendo así que la seq 1 proviene de la especie *Balaenoptera edeni*. Lllegue a esta conclución gracias a el resultado del e-value el cual fue de 0, indicando  seguridad de que su alineación no fue por azar. También con el Bit score que fue de 1062, siendo el más alto de todos e indicando una puntuación de alineación muy alta. Los demás parametros también fueron un precedente al tener un alineamiento de 584pb y % de identad del 99%, pero estos parametros fueron altos a su vez con las demás muestras.
 
 ## Punto 2
